@@ -311,5 +311,30 @@ body {
     }
   }
 }
-//Not Found
-//Loading animation for App
+@media screen and (min-width: 1025px) {
+  .Navbar {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px 0;
+    .form-select {
+      margin-top: 5px;
+      flex-direction: row;
+    }
+    form {
+      display: flex;
+      text-align: center;
+      flex-direction: row;
+      .search {
+        margin: auto 20px auto 10px;
+      }
+    }
+    .form-select {
+      select {
+        height: 35px;
+        text-align: center;
+        margin: auto 0;
+      }
+    }
+  }
+}
