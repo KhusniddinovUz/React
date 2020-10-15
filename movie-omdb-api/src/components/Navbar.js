@@ -8,6 +8,7 @@ class Navbar extends Component {
         <div className="form-select">
           <form onSubmit={(e) => this.props.searchButton(e)}>
             <input
+              placeholder="Search Movie"
               type="search"
               onChange={(event) => this.props.input(event)}
               value={this.props.inputValue}

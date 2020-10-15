@@ -77,6 +77,9 @@ body {
       outline: none;
       border: none;
       border-bottom: solid 2px #fff;
+      &::placeholder {
+        color: #fff;
+      }
       &::-webkit-search-cancel-button {
         color: #fff;
         background: #fff;
@@ -195,6 +198,7 @@ body {
     width: 100%;
     flex-direction: column;
     .form-select {
+      margin-top: 5px;
       flex-direction: column;
     }
     form {
@@ -203,20 +207,25 @@ body {
       text-align: center;
       flex-direction: column;
       .search {
-        margin: 0px;
-        margin-top: 10px;
-        margin-bottom: 10px;
+        margin: 0 auto !important;
+        margin-top: 10px !important;
+        margin-bottom: 10px !important;
+        width: 100% !important;
       }
     }
     .form-select {
       select {
         margin: 0px;
+        padding: 5px;
         text-align: center;
       }
     }
   }
 }
 @media screen and (max-width: 630px) and (min-width: 381px) {
+  .App {
+    padding: 0;
+  }
   .Fullmovie {
     flex-direction: column;
     justify-content: center;
@@ -234,30 +243,71 @@ body {
     }
   }
   .Navbar {
-    h1 {
-      font-size: 25px;
-    }
+    width: 100%;
     flex-direction: column;
-    padding: 0;
     .form-select {
+      margin-top: 5px;
       flex-direction: column;
+    }
+    form {
+      margin-top: 10px;
+      display: flex;
+      text-align: center;
+      flex-direction: row;
+      .search {
+        margin-left: 10px;
+      }
+    }
+    .form-select {
       select {
         margin: 10px auto;
-        width: 60%;
+        padding: 5px;
+        text-align: center;
       }
     }
   }
 }
 @media screen and (max-width: 1024px) and (min-width: 631px) {
+  .App {
+    padding: 0;
+  }
   .Fullmovie {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
     .exit {
       display: none;
     }
+    .poster {
+      margin: 20px auto;
+    }
+    .all {
+      margin-top: 10px;
+      width: 85%;
+    }
   }
   .Navbar {
+    width: 100%;
     flex-direction: column;
-    div {
-      margin-top: 10px;
+    .form-select {
+      margin-top: 5px;
+      flex-direction: row;
+    }
+    form {
+      display: flex;
+      text-align: center;
+      flex-direction: row;
+      .search {
+        margin: auto 20px auto 10px;
+      }
+    }
+    .form-select {
+      select {
+        height: 35px;
+        text-align: center;
+        margin: auto 0;
+      }
     }
   }
 }
