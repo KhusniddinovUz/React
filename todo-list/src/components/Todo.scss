@@ -1,0 +1,43 @@
+.Todo {
+  margin-bottom: 10px;
+  width: 100%;
+  background-color: #5521a0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 30px;
+  transform: translateX(-100%);
+  animation-name: apperance;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  .icons {
+    i {
+      padding: 15px;
+      &:first-child {
+        margin-right: 10px;
+      }
+      &:hover {
+        border-radius: 50%;
+        background: #3d1877;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+@keyframes apperance {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+@keyframes exiting {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
