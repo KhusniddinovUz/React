@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Cockpit from './components/Cockpit';
 import Input from './components/Input';
 import Todo from './components/Todo';
-import { uuid } from 'uuidv4';
+import { v4 as uuid } from 'uuid';
 
 class App extends Component {
   state = {
@@ -36,11 +36,9 @@ class App extends Component {
   deleteClickHandler = async (e, index) => {
     let parent = e.target.parentElement.parentElement;
     parent.style.animationName = 'exiting';
-    console.log(parent);
     setTimeout(() => {
       const dataCopy = [...this.state.data];
       dataCopy.splice(index, 1);
-      console.log(dataCopy);
       this.setState({ data: dataCopy });
     }, 1000);
   };
