@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Cockpit from './components/Cockpit';
 import Input from './components/Input';
 import Todo from './components/Todo';
-import Edit from './components/Edit';
+import { uuid } from 'uuidv4';
 
 class App extends Component {
   state = {
@@ -14,7 +14,8 @@ class App extends Component {
     e.preventDefault();
     if (this.state.currentValue !== '') {
       const dataCopy = [...this.state.data];
-      dataCopy.push(this.state.currentValue);
+      const todo = { name: this.state.currentValue, id: uuid() };
+      dataCopy.push(todo);
       this.setState({ data: dataCopy, currentValue: '' });
       document.querySelector('.search').style.background = '#ccc';
       document.querySelector('.search').style.color = '#333';
@@ -32,10 +33,16 @@ class App extends Component {
     this.setState({ currentValue: e.target.value });
   };
 
-  deleteClickHandler = (e, index) => {
-    const dataCopy = [...this.state.data];
-    dataCopy.splice(index - 1, 1);
-    this.setState({ data: dataCopy });
+  deleteClickHandler = async (e, index) => {
+    let parent = e.target.parentElement.parentElement;
+    parent.style.animationName = 'exiting';
+    console.log(parent);
+    setTimeout(() => {
+      const dataCopy = [...this.state.data];
+      dataCopy.splice(index, 1);
+      console.log(dataCopy);
+      this.setState({ data: dataCopy });
+    }, 1000);
   };
 
   render() {
@@ -52,9 +59,9 @@ class App extends Component {
           {this.state.data &&
             this.state.data.map((it, ind) => (
               <Todo
-                key={ind}
-                name={it}
-                index={ind + 1}
+                name={it.name}
+                key={it.id}
+                index={ind}
                 delete={this.deleteClickHandler}
               />
             ))}
