@@ -33,11 +33,20 @@
     transform: translateX(0%);
   }
 }
-@keyframes exiting {
+@keyframes exit {
   0% {
     transform: translateX(0%);
   }
   100% {
     transform: translateX(100%);
+  }
+}
+
+@keyframes down {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(120%);
   }
 }

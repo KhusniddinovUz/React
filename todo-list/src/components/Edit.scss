@@ -1,0 +1,23 @@
+.Edit {
+  background: #5521a0;
+  height: 66px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  input {
+    padding: 10px;
+    border: none;
+    outline: none;
+    color: #333;
+  }
+  button {
+    padding: 10px;
+    border: none;
+    outline: none;
+    color: #333;
+    cursor: pointer;
+    background: #ccc;
+  }
+  display: none;
+}

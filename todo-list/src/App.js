@@ -35,7 +35,7 @@ class App extends Component {
 
   deleteClickHandler = async (e, index) => {
     let parent = e.target.parentElement.parentElement;
-    parent.style.animationName = 'exiting';
+    parent.style.animationName = 'exit';
     setTimeout(() => {
       const dataCopy = [...this.state.data];
       dataCopy.splice(index, 1);
@@ -52,13 +52,12 @@ class App extends Component {
           change={this.inputChangeHandler}
           value={this.state.currentValue}
         />
-        {/*<Edit />*/}
         <div className="Todos">
           {this.state.data &&
-            this.state.data.map((it, ind) => (
+            this.state.data.map((item, ind) => (
               <Todo
-                name={it.name}
-                key={it.id}
+                key={item.id}
+                name={item.name}
                 index={ind}
                 delete={this.deleteClickHandler}
               />
