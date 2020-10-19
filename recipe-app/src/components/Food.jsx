@@ -3,11 +3,18 @@ import React, { Component } from 'react';
 class Food extends Component {
   render() {
     const { data } = this.props;
-    console.log(data);
     return (
       <div className='Food'>
-        <div></div>
-        <img src={data['image']} alt={data['label']} />
+        <ul>
+          {data['ingredientLines'].map((item) => (
+            <li>{item}</li>
+          ))}
+        </ul>
+        <div className='img'>
+          <h1>{data['label']}</h1>
+          <p>{data['calories']}kkal</p>
+          <img src={data['image']} alt={data['label']} />
+        </div>
       </div>
     );
   }

@@ -5,21 +5,19 @@ import { APP_ID, APP_KEY } from './data';
 import './index.scss';
 import Food from './components/Food';
 class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      inputValue: '',
-      query: '',
-      data: [],
-    };
-  }
-  getRecipe = async () => {
+  state = {
+    inputValue: '',
+    query: '',
+    data: [],
+  };
+  getRecipe = async (value) => {
+    console.log(value);
+    console.log(this.state);
     const resp = await axios.get(
-      `https://api.edamam.com/search?q=${this.state.query}cola&app_id=${APP_ID}&app_key=${APP_KEY}`
+      `https://api.edamam.com/search?q=${value}&app_id=${APP_ID}&app_key=${APP_KEY}`
     );
-    const data = await resp['data']['hits'];
-    let response = data.map((item) => item['recipe']);
-    this.setState({ data: response });
+    let data = resp['data']['hits'].map((item) => item['recipe']);
+    this.setState({ data: data });
   };
 
   inputChange = (e) => {
@@ -28,8 +26,8 @@ class App extends Component {
 
   formSubmit = (e) => {
     e.preventDefault();
+    this.getRecipe(this.state.inputValue);
     this.setState({ query: this.state.inputValue, inputValue: '' });
-    this.getRecipe();
   };
 
   render() {
