@@ -5,19 +5,22 @@ import { APP_ID, APP_KEY } from './data';
 import './index.scss';
 import Food from './components/Food';
 class App extends Component {
+  componentDidMount() {
+    this.getRecipe('chicken');
+  }
   state = {
     inputValue: '',
     query: '',
     data: [],
   };
   getRecipe = async (value) => {
-    console.log(value);
-    console.log(this.state);
-    const resp = await axios.get(
-      `https://api.edamam.com/search?q=${value}&app_id=${APP_ID}&app_key=${APP_KEY}`
-    );
-    let data = resp['data']['hits'].map((item) => item['recipe']);
-    this.setState({ data: data });
+    if (value !== '') {
+      const resp = await axios.get(
+        `https://api.edamam.com/search?q=${value}&app_id=${APP_ID}&app_key=${APP_KEY}`
+      );
+      let data = resp['data']['hits'].map((item) => item['recipe']);
+      this.setState({ data: data });
+    }
   };
 
   inputChange = (e) => {

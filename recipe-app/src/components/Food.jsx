@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import image from '../utensils-solid.svg';
 class Food extends Component {
   render() {
     const { data } = this.props;
