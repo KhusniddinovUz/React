@@ -123,12 +123,13 @@ const App = () => {
   const requestHandler = async (q) => {
     if (q !== '') {
       setLoading(true);
-      const moviesResp = await fetch(`${PROXY}${API}/?s=${q}&apikey=${API_KEY}`);
+      const moviesResp = await fetch(
+        `${PROXY}${API}/?s=${q}&apikey=${API_KEY}`
+      );
       const moviesR = await moviesResp.json();
       setMovies(await moviesR['Search']);
       setLoading(false);
       selectChangeHandler('Title', moviesR['Search']);
-      console.log(moviesR['Search']);
     }
   };
 
