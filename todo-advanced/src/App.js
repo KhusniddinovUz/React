@@ -10,7 +10,8 @@ const App = () => {
       <div className='box'>
         <Form />
         <div className='todos'>
-          {state && state.map((i) => <Todo name={i.name} key={i.id} />)}
+          {state &&
+            state.map((i) => <Todo name={i.name} key={i.id} id={i.id} />)}
         </div>
       </div>
     </div>

@@ -5,9 +5,9 @@ export const addTodo = (todo) => {
   };
 };
 
-export const removeTodo = (index) => {
+export const removeTodo = (id) => {
   return {
     type: 'REMOVE_TODO',
-    index: index,
+    id: id,
   };
 };

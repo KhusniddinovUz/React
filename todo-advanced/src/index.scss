@@ -35,11 +35,23 @@
         padding: 10px 20px;
         display: flex;
         align-items: center;
+        border-bottom: solid 1px #ccc;
+        &:hover .icon {
+          display: block;
+        }
         input[type='checkbox'] {
           cursor: pointer;
           margin-right: 20px;
         }
-        display: flex;
+        .icon {
+          display: none;
+          position: absolute;
+          top: 50%;
+          right: 20px;
+          transform: translateY(-50%);
+          font-size: 20px;
+          cursor: pointer;
+        }
       }
     }
   }
