@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Source Code Pro';
+}
+
+.App {
+  margin-top: 30px;
+  text-align: center;
+  .box {
+    margin: auto;
+    width: 500px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15), 0 10px 0 -5px #eee,
+      0 10px 1px -4px rgba(0, 0, 0, 0.15), 0 20px 0 -10px #eee,
+      0 20px 1px -9px rgba(0, 0, 0, 0.15), -1px -1px 3px #ccc;
+    .Form {
+      width: 100%;
+      input {
+        width: 100%;
+        padding: 15px 25px;
+        box-shadow: 1px 1px 1px #ccc;
+        border: none;
+        outline: none;
+        &::placeholder {
+          font-size: 16px;
+        }
+      }
+    }
+    .todos {
+      .Todo {
+        position: relative;
+        padding: 10px 20px;
+        display: flex;
+        align-items: center;
+        input[type='checkbox'] {
+          cursor: pointer;
+          margin-right: 20px;
+        }
+        display: flex;
+      }
+    }
+  }
+}
