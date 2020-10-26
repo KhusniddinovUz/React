@@ -1,8 +1,10 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { changeFilter } from '../redux/filterActions';
 const Filter = () => {
   const state = useSelector((state) => state);
   const length = state.todo.filter((a) => a.done === false);
+  const change = useDispatch();
 
   const filterClick = (index, method) => {
     let filters = document.getElementsByClassName('filter');
@@ -10,6 +12,7 @@ const Filter = () => {
       i.className = 'filter';
     }
     filters[index].className = 'active filter';
+    change(changeFilter(method));
   };
   return (
     <div className='Filter'>
