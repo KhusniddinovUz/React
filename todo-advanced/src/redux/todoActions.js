@@ -11,3 +11,11 @@ export const removeTodo = (id) => {
     id: id,
   };
 };
+
+export const replaceTodo = (done, index) => {
+  return {
+    type: 'REPLACE_TODO',
+    done: done,
+    index: index,
+  };
+};

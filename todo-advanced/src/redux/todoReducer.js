@@ -9,6 +9,10 @@ const todoReducer = (state = [], action) => {
       let ind = copy2.findIndex((obj) => obj.id === action.id);
       copy2.splice(ind, 1);
       return copy2;
+    case 'REPLACE_TODO':
+      let copy4 = [...state];
+      copy4[action.index].done = action.done;
+      return copy4;
     default:
       return state;
   }

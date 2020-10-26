@@ -1,16 +1,17 @@
 import React, { useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { removeTodo } from '../redux/todoActions';
+import { useDispatch } from 'react-redux';
+import { removeTodo, replaceTodo } from '../redux/todoActions';
 
 const Todo = (props) => {
   const [check, setCheck] = useState(false);
-  const state = useSelector((state) => state);
   const remove = useDispatch();
-  console.log(state);
+  const replace = useDispatch();
   let inStyle = {};
 
-  const checkHandler = () => {
+  const checkHandler = (index) => {
     setCheck(!check);
+    props.todo.done = !props.todo.done;
+    replace(replaceTodo(props.todo.done, index));
   };
 
   const removetodo = (id) => {
@@ -31,11 +32,11 @@ const Todo = (props) => {
 
   return (
     <div className='Todo'>
-      <input type='checkbox' onClick={checkHandler} />
-      <div style={inStyle}>{props.name}</div>
+      <input type='checkbox' onClick={(index) => checkHandler(props.index)} />
+      <div style={inStyle}>{props.todo.name}</div>
       <i
         className='fas fa-times-circle icon'
-        onClick={() => removetodo(props.id)}
+        onClick={() => removetodo(props.todo.id)}
       />
     </div>
   );

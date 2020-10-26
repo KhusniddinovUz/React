@@ -2,6 +2,7 @@ import React from 'react';
 import Form from './components/Form';
 import Todo from './components/Todo';
 import { useSelector } from 'react-redux';
+import Filter from './components/Filter';
 const App = () => {
   const state = useSelector((state) => state);
   return (
@@ -11,8 +12,9 @@ const App = () => {
         <Form />
         <div className='todos'>
           {state &&
-            state.map((i) => <Todo name={i.name} key={i.id} id={i.id} />)}
+            state.map((i) => <Todo key={i.id} todo={i} index={i.index} />)}
         </div>
+        <Filter />
       </div>
     </div>
   );
