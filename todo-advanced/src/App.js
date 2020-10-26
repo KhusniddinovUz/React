@@ -11,8 +11,7 @@ const App = () => {
       <div className='box'>
         <Form />
         <div className='todos'>
-          {state &&
-            state.map((i) => <Todo key={i.id} todo={i} index={i.index} />)}
+          {state && state.todo.map((i) => <Todo key={i.id} todo={i} />)}
         </div>
         <Filter />
       </div>

@@ -1,9 +1,8 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { addTodo } from '../redux/todoActions';
 import { v4 as uuidv4 } from 'uuid';
 const Form = () => {
-  const state = useSelector((state) => state);
   const add = useDispatch();
 
   const submitHandler = (e) => {
@@ -15,7 +14,6 @@ const Form = () => {
         name: value,
         id: uuidv4(),
         done: false,
-        index: state.length,
       };
       add(addTodo(todo));
     }
