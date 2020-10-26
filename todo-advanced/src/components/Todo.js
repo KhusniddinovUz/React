@@ -32,7 +32,11 @@ const Todo = (props) => {
 
   return (
     <div className='Todo'>
-      <input type='checkbox' onClick={(e) => checkHandler(e)} />
+      <input
+        type='checkbox'
+        onClick={(e) => checkHandler(e)}
+        checked={props.todo.done}
+      />
       <div style={inStyle}>{props.todo.name}</div>
       <i
         className='fas fa-times-circle icon'
