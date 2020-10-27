@@ -16,7 +16,7 @@
     height: 400px;
     border-radius: 3px;
   }
-  .form {
+  .wrapper {
     margin-left: 20px;
     text-align: center;
     width: 300px;
@@ -38,6 +38,27 @@
       cursor: pointer;
       &:active {
         transform: translate(1px, 2px);
+      }
+    }
+    .more {
+      height: 100%;
+      display: flex;
+      justify-content: space-around;
+      ul {
+        height: 80%;
+        list-style-type: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        text-align: left;
+        &:first-child {
+          margin-right: 20px;
+        }
+        li {
+          box-shadow: 1px 1px 2px #ccc, -1px -1px 2px #ccc;
+          padding: 10px;
+          border-radius: 3px;
+        }
       }
     }
   }
