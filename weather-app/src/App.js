@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import sunny from './media/sunny.jpg';
+import raining from './media/raining.jpg';
+import cloudy from './media/cloudy.jpg';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  state = {
+    search: '',
+    type: sunny,
+  };
+  render() {
+    return (
+      <div className='App'>
+        <form className='form'>
+          <input type='text' id='search' />
+          <button type='submit'>Search</button>
+        </form>
+        <img className='img' alt='weather' src={this.state.type} />
+      </div>
+    );
+  }
 }
 
 export default App;
