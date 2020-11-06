@@ -9,13 +9,34 @@ import {
   Icon,
 } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
+import firebase from '../../firebase';
 
 class Register extends Component {
-  state = {};
+  state = {
+    username: '',
+    email: '',
+    password: '',
+    passwordConfirmation: '',
+  };
 
-  handleChange = () => {};
+  handleChange = (event) => {
+    this.setState({
+      [event.target.name]: event.target.value,
+    });
+  };
+
+  handleSubmit = (event) => {
+    event.preventDefault();
+    firebase
+      .auth()
+      .createUserWithEmailAndPassword(this.state.email, this.state.password)
+      .then((user) => console.log(user))
+      .catch((err) => console.log(err));
+  };
 
   render() {
+    const { username, email, password, passwordConfirmation } = this.state;
+
     return (
       <Grid textAlign='center' verticalAlign='middle' className='app'>
         <Grid.Column style={{ maxWidth: 450 }}>
@@ -23,9 +44,10 @@ class Register extends Component {
             <Icon name='puzzle piece' color='orange' />
             Register for Devchat
           </Header>
-          <Form size='large'>
+          <Form onSubmit={this.handleSubmit} size='large'>
             <Segment stacked>
               <Form.Input
+                value={username}
                 fluid
                 name='username'
                 icon='user'
@@ -35,6 +57,7 @@ class Register extends Component {
                 type='text'
               />
               <Form.Input
+                value={email}
                 fluid
                 name='email'
                 icon='mail'
@@ -44,6 +67,7 @@ class Register extends Component {
                 type='email'
               />
               <Form.Input
+                value={password}
                 fluid
                 name='password'
                 icon='lock'
@@ -53,6 +77,7 @@ class Register extends Component {
                 type='password'
               />
               <Form.Input
+                value={passwordConfirmation}
                 fluid
                 name='passwordConfirmation'
                 icon='repeat'
