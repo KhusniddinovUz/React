@@ -10,6 +10,7 @@ import {
 } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 import firebase from '../../firebase';
+import md5 from 'md5';
 
 class Register extends Component {
   state = {
@@ -19,6 +20,7 @@ class Register extends Component {
     passwordConfirmation: '',
     errors: [],
     loading: false,
+    userRef: firebase.database().ref('users'),
   };
 
   isFormValid = () => {
@@ -74,6 +76,26 @@ class Register extends Component {
         .createUserWithEmailAndPassword(this.state.email, this.state.password)
         .then((user) => {
           console.log(user);
+          user.user
+            .updateProfile({
+              displayName: this.state.username,
+              photoURL: `https://gravatar.com/avatar/${md5(
+                user.user.email
+              )}?d=identicon`,
+            })
+            .then(() => {
+              // this.setState({ loading: false });
+              this.saveUser(user).then(() => {
+                console.log('user saved');
+              });
+            })
+            .catch((err) => {
+              console.log(err);
+              this.setState({
+                errors: this.state.errors.concat(err),
+                loading: false,
+              });
+            });
           this.setState({ loading: false });
         })
         .catch((err) => {
@@ -84,6 +106,13 @@ class Register extends Component {
           });
         });
     }
+  };
+
+  saveUser = (createdUser) => {
+    return this.state.userRef.child(createdUser.user.uid).set({
+      name: createdUser.user.displayName,
+      avatar: createdUser.user.photoURL,
+    });
   };
 
   handleInputErrors = (errors, inputName) =>
