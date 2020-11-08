@@ -61,7 +61,7 @@ class Fullmovie extends Component {
           <div className="poster">
             <img
               src={movie['Poster']}
-              alt="Image is not available"
+              alt="Not available"
               width="300"
               height="470"
             />

@@ -8,7 +8,7 @@ class Movie extends Component {
         <div className="Movie" onClick={() => {}}>
           <img
             src={this.props.obj['Poster']}
-            alt="Image is not available"
+            alt="Not available"
             className="poster"
             width="100%"
             height="210"
