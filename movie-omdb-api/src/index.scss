@@ -16,6 +16,15 @@ body {
   padding-right: 3rem;
   text-align: center;
 }
+.pre-loader {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: absolute;
+}
 .Movie {
   display: inline-block;
   margin: 2rem 1.5rem;
