@@ -10,17 +10,19 @@ const Content = () => {
   const dispatch = useDispatch();
   const submitHandler = (e) => {
     e.preventDefault();
-    dispatch(setTrue());
     const name = document.getElementById('name').value;
     const city = document.getElementById('city').value;
-    document.getElementById('city').value = '';
-    document.getElementById('name').value = '';
-    db.collection('cafes')
-      .add({
-        name: name,
-        city: city,
-      })
-      .then(() => dispatch(setFalse()));
+    if (name !== '' && city !== '') {
+      dispatch(setTrue());
+      document.getElementById('city').value = '';
+      document.getElementById('name').value = '';
+      db.collection('cafes')
+        .add({
+          name: name,
+          city: city,
+        })
+        .then(() => dispatch(setFalse()));
+    }
   };
   const [data, setData] = useState([]);
   useEffect(() => {
