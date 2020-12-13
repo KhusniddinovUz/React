@@ -1,9 +1,9 @@
 const loader = (state = { loading: false }, action) => {
   switch (action.type) {
     case 'SET_TRUE':
-      return true;
+      return { loading: true };
     case 'SET_FALSE':
-      return false;
+      return { loading: false };
     default:
       return state;
   }

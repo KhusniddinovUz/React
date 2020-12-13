@@ -1,22 +1,12 @@
 import React from 'react';
 import './Form.scss';
-import { db } from '../../firebase';
 
-const Form = () => {
-  const submitHandler = (e) => {
-    e.preventDefault();
-    const form = document.querySelector('.Form');
-    console.log(form.name);
-    // db.collection('caefs').add({
-    //   name: form.name.value,
-    //   city: form.city.value,
-    // });
-  };
+const Form = (props) => {
   return (
-    <div className='Form' onSubmit={submitHandler}>
+    <div className='Form' onSubmit={(e) => props.submit(e)}>
       <form>
-        <input type='text' name='name' placeholder='Cafe Name' />
-        <input type='text' name='city' placeholder='Cafe City' />
+        <input type='text' id='name' placeholder='Cafe Name' />
+        <input type='text' id='city' placeholder='Cafe City' />
         <button type='submit'>Add Cafe</button>
       </form>
     </div>

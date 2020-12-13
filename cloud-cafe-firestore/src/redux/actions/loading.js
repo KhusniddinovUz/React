@@ -1,7 +1,11 @@
 export const setTrue = () => {
-  return 'SET_TRUE';
+  return {
+    type: 'SET_TRUE',
+  };
 };
 
 export const setFalse = () => {
-  return 'SET_FALSE';
+  return {
+    type: 'SET_FALSE',
+  };
 };
