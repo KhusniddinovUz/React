@@ -1,0 +1,32 @@
+.Form {
+  form {
+    display: flex;
+    input {
+      padding: 10px;
+      border: none;
+      outline: none;
+      width: 390px;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      margin-right: 20px;
+      font-size: 20px;
+      &::placeholder {
+        opacity: 0.5;
+        font-size: 20px;
+      }
+    }
+    button {
+      display: block;
+      padding: 3px 15px;
+      opacity: 0.7;
+      border: none;
+      outline: none;
+      background: none;
+      border-radius: 5px;
+      box-shadow: 1px 1px 1px #ccc, -1px -1px 1px #ccc;
+      cursor: pointer;
+      &:active {
+        transform: translate(1px, 2px);
+      }
+    }
+  }
+}
