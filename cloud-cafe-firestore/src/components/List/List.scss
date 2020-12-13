@@ -3,6 +3,7 @@
   background-color: #f6f6f6;
   padding: 20px;
   margin-top: 10px;
+  position: relative;
   .name {
     text-align: left;
     font-size: 20px;
@@ -15,6 +16,18 @@
     i {
       margin-right: 5px;
       color: red;
+    }
+  }
+  .fa-trash {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 20px;
+    padding: 15px;
+    &:hover {
+      cursor: pointer;
+      background-color: #eab0dc;
+      border-radius: 50%;
     }
   }
 }

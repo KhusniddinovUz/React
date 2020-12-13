@@ -7,7 +7,7 @@ const Lists = (props) => {
     <div className='Lists'>
       {props.data &&
         props.data.map((cafe) => {
-          return <List cafe={cafe.data()} key={cafe.id} />;
+          return <List cafe={cafe} key={cafe.id} />;
         })}
     </div>
   );

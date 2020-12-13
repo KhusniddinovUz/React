@@ -29,7 +29,7 @@ const Content = () => {
       .then((snapshot) => {
         setData(snapshot.docs);
       });
-  });
+  }, [db.collection('cafes').get()]);
   return (
     <div className='Content'>
       <Form submit={submitHandler} />
