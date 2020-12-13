@@ -2,10 +2,13 @@ import React from 'react';
 import List from '../List/List';
 import './Lists.scss';
 
-const Lists = () => {
+const Lists = (props) => {
   return (
     <div className='Lists'>
-      <List />
+      {props.data &&
+        props.data.map((cafe) => {
+          return <List cafe={cafe.data()} key={cafe.id} />;
+        })}
     </div>
   );
 };
