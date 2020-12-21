@@ -18,7 +18,7 @@ const SignIn = () => {
   };
   return (
     <div className='container'>
-      <form onSubmit={handleSubmit} className='white'>
+      <form onSubmit={handleSubmit} className='white myBox'>
         <h5 className='grey-text text-darken-3'>Sign In</h5>
         <div className='input-field'>
           <label htmlFor='email'>Email</label>
@@ -29,7 +29,7 @@ const SignIn = () => {
           <input type='password' id='password' onChange={handleChange} />
         </div>
         <div className='input-field'>
-          <button className='btn pink lighten-1'>LogIn</button>
+          <button className='btn'>LogIn</button>
         </div>
       </form>
     </div>

@@ -24,7 +24,7 @@ const SignUp = () => {
   };
   return (
     <div className='container'>
-      <form onSubmit={handleSubmit} className='white'>
+      <form onSubmit={handleSubmit} className='white myBox'>
         <h5 className='grey-text text-darken-3'>Sign Up</h5>
         <div className='input-field'>
           <label htmlFor='email'>Email</label>
@@ -43,7 +43,7 @@ const SignUp = () => {
           <input type='text' id='lastName' onChange={handleChange} />
         </div>
         <div className='input-field'>
-          <button className='btn pink lighten-1'>Sign Up</button>
+          <button className='btn'>Sign Up</button>
         </div>
       </form>
     </div>
