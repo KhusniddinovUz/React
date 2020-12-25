@@ -1,0 +1,65 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Roboto;
+}
+
+html {
+  min-height: 100%;
+}
+
+body {
+  background-size: 100%;
+  background-position: bottom;
+  background-color: #16697a;
+  min-height: 100%;
+}
+
+.myBox {
+  -webkit-box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
+          box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
+  border-radius: 5px;
+}
+
+.btn-floating {
+  background: #16697a;
+}
+
+.btn-floating:hover {
+  background: #16697a;
+}
+
+form {
+  padding: 20px;
+  margin-top: 60px;
+}
+
+form .btn {
+  background: #f05454;
+}
+
+form .btn:hover {
+  background: #f05454;
+}
+
+form .btn:focus {
+  background: #f05454;
+}
+
+input[type='text']:not(.browser-default):focus:not([readonly]),
+input[type='email']:not(.browser-default):focus:not([readonly]),
+input[type='password']:not(.browser-default):focus:not([readonly]),
+textarea.materialize-textarea:focus:not([readonly]) {
+  border-color: #16697a;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+input[type='text']:not(.browser-default):focus:not([readonly]) + label,
+textarea.materialize-textarea:focus:not([readonly]) + label,
+input[type='email']:not(.browser-default):focus:not([readonly]) + label,
+input[type='password']:not(.browser-default):focus:not([readonly]) + label {
+  color: #16697a !important;
+}
+/*# sourceMappingURL=index.css.map */
