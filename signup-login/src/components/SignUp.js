@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const SignUp = () => {
   return (
@@ -42,13 +43,13 @@ const SignUp = () => {
             placeholder='Password'
           />
         </div>
-        <div className='container'>
-          <button type='submit' className='btn btn-primary mt-2'>
+        <div className='container d-flex align-items-center mt-2'>
+          <button type='submit' className='btn btn-primary'>
             Register
           </button>
-          <span>
-            Already have an account? <a href=''>Login</a> here
-          </span>
+          <div className='text-center w-100'>
+            Already have an account? <Link to='/login'>Login</Link> here
+          </div>
         </div>
       </form>
     </div>
