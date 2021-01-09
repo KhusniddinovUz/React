@@ -1,9 +1,9 @@
 import React from 'react';
 
-const SignUp = () => {
+const Login = () => {
   return (
     <div className='container SignUp p-3'>
-      <h1 className='mt-4 p-1 text-center'>Signup for user profile</h1>
+      <h1 className='mt-4 p-1 text-center'>Login via username</h1>
       <form>
         <div className='form-group p-2 '>
           <label htmlFor='username'>Username</label>
@@ -14,16 +14,7 @@ const SignUp = () => {
             placeholder='Enter Username'
           />
         </div>
-        <div className='form-group p-2 '>
-          <label htmlFor='email'>Email address</label>
-          <input
-            type='email'
-            className='form-control'
-            id='email'
-            aria-describedby='emailHelp'
-            placeholder='Enter email'
-          />
-        </div>
+
         <div className='form-group p-2'>
           <label htmlFor='password1'>Password</label>
           <input
@@ -33,21 +24,13 @@ const SignUp = () => {
             placeholder='Password'
           />
         </div>
-        <div className='form-group p-2'>
-          <label htmlFor='password2'>Repeat Password</label>
-          <input
-            type='password'
-            className='form-control'
-            id='password2'
-            placeholder='Password'
-          />
-        </div>
+
         <div className='container'>
           <button type='submit' className='btn btn-primary mt-2'>
-            Register
+            Login
           </button>
           <span>
-            Already have an account? <a href=''>Login</a> here
+            Don't have an account? <a href=''>Signup</a> here
           </span>
         </div>
       </form>
@@ -55,4 +38,4 @@ const SignUp = () => {
   );
 };
 
-export default SignUp;
+export default Login;
