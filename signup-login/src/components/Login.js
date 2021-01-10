@@ -1,11 +1,24 @@
-import React from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const Login = () => {
+  const [user, setUser] = useState({ username: '', password: '' });
+
+  const changeHandler = (e) => {
+    const newuser = Object.assign({}, user, { [e.target.id]: e.target.value });
+    setUser(newuser);
+  };
+
+  const submitHandler = (e) => {
+    e.preventDefault();
+    //Fetch API for login
+    console.log(user);
+  };
+
   return (
     <div className='container SignUp p-3'>
       <h1 className='mt-4 p-1 text-center'>Login via username</h1>
-      <form>
+      <form onSubmit={submitHandler}>
         <div className='form-group p-2 '>
           <label htmlFor='username'>Username</label>
           <input
@@ -13,19 +26,20 @@ const Login = () => {
             className='form-control'
             id='username'
             placeholder='Enter Username'
+            onChange={changeHandler}
           />
         </div>
 
         <div className='form-group p-2'>
-          <label htmlFor='password1'>Password</label>
+          <label htmlFor='password'>Password</label>
           <input
             type='password'
             className='form-control'
-            id='password1'
+            id='password'
             placeholder='Password'
+            onChange={changeHandler}
           />
         </div>
-
         <div className='container d-flex align-items-center mt-2'>
           <button type='submit' className='btn btn-primary'>
             Register
