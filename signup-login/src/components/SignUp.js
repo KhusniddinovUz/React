@@ -24,10 +24,10 @@ const SignUp = () => {
 
   const passwordValid = () => {
     if (user.password1 === user.password2 && user.password1.length > 6) {
-      setBorder('border-danger form-control');
+      setBorder('form-control');
       return true;
     } else {
-      setBorder('form-control');
+      setBorder('border-danger form-control');
       return false;
     }
   };
